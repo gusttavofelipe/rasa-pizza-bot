@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "initial"
+version = "0.1.0"
+description = ""
+authors = ["Gustavo Felipe <gustavofeliperepositorio@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.10.12"
+SQLAlchemy = "<2.0"
+rasa = {extras = ["twilio"], version = "^3.6.20"}
+setuptools = "^75.6.0"
+twilio = "^8.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
