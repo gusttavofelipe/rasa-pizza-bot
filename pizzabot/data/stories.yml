@@ -4,4 +4,4 @@ stories:
   - story: Order a pizza
     steps:
       - intent: greet
-      - action: utter_greet
+      - action: action_stt_greet

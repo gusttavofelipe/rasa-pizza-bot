@@ -1,12 +1,17 @@
 version: "3.1"
+
 intents:
   - greet
 
-responses:
-  utter_greet:
-    - custom:
-        type: "whatsapp_template"
-        template_name:
+# responses:
+
+actions:
+  - action_stt_greet
+
+slots:
+  user_whatsapp:
+    type: text
+    influence_conversation: false
 
 
 session_config:
