@@ -12,3 +12,7 @@ actions:
 
 run:
 	@cd pizzabot && rasa run --enable-api --cors "*"
+
+pycache:
+	@echo "Running Clean Pycache..."
+	@find . \( -name *.py[co] -o -name __pycache__ \) -delete
