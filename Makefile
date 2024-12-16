@@ -1,17 +1,24 @@
 train:
-	@cd pizzabot && rasa train
+	@cd bot \
+	&& rasa train
 
 shell:
-	@cd pizzabot && rasa shell
+	@cd bot \
+	&& rasa shell
 
-test:
-	@cd pizzabot && rasa test
+tests:
+	@cd bot \
+	&& rasa test
 
 actions:
-	@cd pizzabot && rasa run actions
+	@cd bot \
+	&& poetry run python environ.py \
+	&& rasa run actions 
 
 run:
-	@cd pizzabot && rasa run --enable-api --cors "*"
+	@cd bot \
+	&& poetry run python environ.py \
+	&& rasa run --enable-api --cors "*"
 
 pycache:
 	@echo "Running Clean Pycache..."

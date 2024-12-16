@@ -1,0 +1,15 @@
+version: "3.1"
+
+stories:
+  - story: Cumprimentar e iniciar pedido
+    steps:
+      - intent: greet
+      - action: action_stt_greet
+
+  - story: Escolher tipo de pizza e perguntar tamanho (genérico)
+    steps:
+      - intent: choose_pizza_type
+        entities:
+          - pizza_type: "Especiais"
+      - action: action_set_pizza_type
+      - action: utter_ask_pizza_size

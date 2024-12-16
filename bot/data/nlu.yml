@@ -1,0 +1,29 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - Olá
+      - Bom dia
+      - Boa tarde
+      - Boa noite
+      - Saudações
+      - Oi
+      - Oiê
+      - Oii
+      - E aí?
+      - Beleza?
+      - Tudo certo?
+      - E aê!
+      - Opa!
+      - Alô
+      - Olá, tudo bem?
+
+  - intent: choose_pizza_type
+    examples: |
+      - Quero pedir uma pizza
+      - Quero fazer um pedido
+      - Quero uma pizza
+      - [Especiais](pizza_type)
+      - [Tradicionais](pizza_type)
+      - [Doces](pizza_type)

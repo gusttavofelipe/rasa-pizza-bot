@@ -1,0 +1,28 @@
+version: "3.1"
+
+intents:
+  - greet
+  - choose_pizza_type
+
+actions:
+  - action_stt_greet
+  - action_set_pizza_type
+
+entities:
+  - pizza_type
+
+slots:
+  pizza_type:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: pizza_type
+
+responses:
+  utter_ask_pizza_size:
+    - text: "Qual tamanho de pizza você deseja? P, M, G ou F?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

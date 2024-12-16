@@ -1,5 +1,5 @@
 from twilio.rest import Client
-from pizzabot.config import settings
+from bot.config import settings
 
 
 class Twilio:
@@ -9,19 +9,30 @@ class Twilio:
         """"""
         return Client(settings.ACCOUNT_SID, settings.AUTH_TOKEN)
 
-    def post_message(self, template_sid: str, tracker=None,):
+    def post(self, template_sid: str, variables: str):
         """"""
 
         try:
             MESSAGE = self.client().messages.create(
                 from_=settings.WHATSAPP_FROM,
-                to=settings.WHATSAPP_TO,
                 content_sid=template_sid,
+                content_variables=variables,
+                to=settings.WHATSAPP_TO,
             )
-            print("MENSAGEM ENVIADA:", MESSAGE.sid)
+            print("SENT MESSAGE:", MESSAGE.sid)
         except Exception as exc:
-            print("OCORREU UM ERRO:", exc)
+            print("ERROR:", exc)
 
 
-twilio = Twilio()
-twilio.post_message(settings.TEMPLATE_SID)
+if __name__ == "__main__":
+    message = Twilio()
+    message.post(
+        template_sid=settings.CHOOSE_OPTIONS_TEMPLATE_SID,
+            variables='''{
+                "1": "*Pizzaria da Joselma*",
+                "2": "Faça sua escolha:",
+                "3": "Tradicionais",
+                "4": "Especiais",
+                "5": "Doces"
+            }'''    
+        )

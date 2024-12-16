@@ -1,5 +1,5 @@
 from twilio.rest import Client
-from pizzabot.config import settings
+from bot.config import settings
 from rasa_sdk.interfaces import Tracker
 
 
@@ -10,7 +10,9 @@ class Twilio:
         """"""
         return Client(settings.ACCOUNT_SID, settings.AUTH_TOKEN)
 
-    def post_message(self, template_sid: str, action_tracker: Tracker) -> None:
+    def post(
+            self, template_sid: str, variables: str, action_tracker: Tracker
+        ) -> None:
         """"""
 
         try:
@@ -18,10 +20,13 @@ class Twilio:
                 from_=settings.WHATSAPP_FROM,
                 to=action_tracker.sender_id,
                 content_sid=template_sid,
+                content_variables=variables
             )
             print("MENSAGEM ENVIADA:", MESSAGE.sid)
         except Exception as exc:
             print("OCORREU UM ERRO:", exc)
 
+        return
 
-twilio = Twilio()
+
+message = Twilio()
