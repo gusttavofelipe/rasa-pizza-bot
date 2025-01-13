@@ -1,21 +1,11 @@
-[tool.poetry]
-name = "initial"
+[project]
+name = "pizzaria-joselma-chatbot"
 version = "0.1.0"
-description = ""
-authors = ["Gustavo Felipe <gustavofeliperepositorio@gmail.com>"]
+description = "Add your description here"
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "3.10.12"
-SQLAlchemy = "<2.0"
-rasa = {extras = ["twilio"], version = "^3.6.20"}
-setuptools = "^75.6.0"
-twilio = "^8.3.0"
-python-dotenv = "^1.0.1"
-fastapi = "^0.115.6"
-uvicorn = "^0.34.0"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires-python = ">=3.10"
+dependencies = [
+    "python-dotenv>=1.0.1",
+    "rasa==3.6.20",
+    "twilio==8.2",
+]
