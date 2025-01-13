@@ -6,12 +6,13 @@ from msg.twilio_ import message
 from bot.config import settings
 
 
-class SttGreet(Action):
+class ActionGreet(Action):
+    """"""
+
     def name(self) -> Text:
         return "action_stt_greet"
 
     def run(self, dispatcher, tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # Configuração do Twilio (Verifique se `message.post` está funcional)
         message.post(
             action_tracker=tracker,
             template_sid=settings.CHOOSE_OPTIONS_TEMPLATE_SID,
@@ -28,6 +29,8 @@ class SttGreet(Action):
 
 
 class ActionSetPizzaType(Action):
+    """"""
+
     def name(self) -> Text:
         return "action_set_pizza_type"
 
