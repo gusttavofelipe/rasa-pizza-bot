@@ -12,12 +12,12 @@ tests:
 
 actions:
 	@cd bot \
-	&& poetry run python environ.py \
+	&& uv run python environ.py \
 	&& rasa run actions 
 
 run:
 	@cd bot \
-	&& poetry run python environ.py \
+	&& uv run python environ.py \
 	&& rasa run --enable-api --cors "*"
 
 pycache:
