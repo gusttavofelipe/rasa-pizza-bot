@@ -5,7 +5,7 @@ intents:
   - choose_pizza_type
 
 actions:
-  - action_stt_greet
+  - action_greet
   - action_set_pizza_type
 
 entities:

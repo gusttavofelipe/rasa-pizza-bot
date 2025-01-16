@@ -1,12 +1,12 @@
 version: "3.1"
 
 stories:
-  - story: Cumprimentar e iniciar pedido
+  - story: Greeting and ordering
     steps:
       - intent: greet
-      - action: action_stt_greet
+      - action: action_greet
 
-  - story: Escolher tipo de pizza e perguntar tamanho (genérico)
+  - story: Choose pizza type and ask for size (generic)
     steps:
       - intent: choose_pizza_type
         entities:
