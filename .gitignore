@@ -55,7 +55,6 @@ build/lib/
 node_modules/
 npm-debug.log
 examples/moodbot/py3/
-.python-version
 tokens.dat
 graph.png
 graph.html

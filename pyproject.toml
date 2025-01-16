@@ -9,3 +9,28 @@ dependencies = [
     "rasa==3.6.20",
     "twilio==8.2",
 ]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9.1",
+    "taskipy>=1.14.1",
+]
+
+[tool.taskipy.tasks]
+# lint
+lint = "uv run ruff check ."
+lintfix = "uv run ruff check . --fix"
+
+# cache
+pre_cache = "echo 'Running Clean Pycache...'"
+cache = "find . \\( -name '*.py[co]' -o -name '__pycache__' \\) -delete"
+post_cache = "echo 'Pycache Cleaned.'"
+
+# rasa (base)
+rasa_cmd = "cd bot && uv run rasa"
+# rasa subtasks
+run = "task rasa_cmd run --enable-api --cors '*'"
+actions = "task rasa_cmd run actions"
+tests = "task rasa_cmd test"
+shell = "task rasa_cmd shell"
+train = "task rasa_cmd train"

@@ -1,12 +1,12 @@
 version: "3.1"
 
 rules:
-  - rule: Responder ao cumprimento
+  - rule: Reply to the greet
     steps:
       - intent: greet
-      - action: action_stt_greet
+      - action: action_greet
 
-  - rule: Perguntar tamanho após escolher tipo de pizza
+  - rule: Ask pizza size after chosse pizza type
     steps:
       - intent: choose_pizza_type
       - action: action_set_pizza_type
